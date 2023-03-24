@@ -10,3 +10,15 @@ Instructions to run it:
 4) Add the depedencies that are inside the lib folder
 5) And.... you're good to go!!!! 
 
+Some Pictures of the functionality:
+
+
+![Picture Showcasing project](https://github.com/simranCodess/Hospital-Database-Management-System/blob/main/My%20project.png)
+
+
+![Picture Showcasing project](https://github.com/simranCodess/Hospital-Database-Management-System/blob/main/My%20project%20(1).png)
+
+![Picture Showcasing project](https://github.com/simranCodess/Hospital-Database-Management-System/blob/main/My%20project%20(2).png)
+
+
+

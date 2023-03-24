@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="617.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo111.DatabaseController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="256.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.21630859375" />
+      <AnchorPane layoutX="-13.0" prefHeight="627.0" prefWidth="166.0" styleClass="left-dashboard" stylesheets="@../../../Dashboard.css">
+         <children>
+            <ImageView fitHeight="69.0" fitWidth="109.0" layoutX="100.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Untitled-2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="50.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back!">
+               <font>
+                  <Font name="Times New Roman Bold" size="25.0" />
+               </font>
+            </Text>
+            <Button layoutX="108.0" layoutY="598.0" mnemonicParsing="false" styleClass="credits-button" stylesheets="@../../../Dashboard.css" text="Credits">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Button>
+            <Button layoutX="90.0" layoutY="537.0" mnemonicParsing="false" styleClass="signOutButton" stylesheets="@../../../Dashboard.css" text="Sign Out">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+            </Button>
+            <Line endX="167.0" layoutX="101.0" layoutY="522.0" startX="-100.0" />
+            <ImageView fitHeight="47.0" fitWidth="69.0" layoutX="97.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="47.0" fitWidth="69.0" layoutX="112.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../hospital:location.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="47.0" fitWidth="47.0" layoutX="110.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Employees.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="47.0" fitWidth="47.0" layoutX="112.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../examination.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="76.0" layoutY="271.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="120.0" text="Hospital">
+               <font>
+                  <Font name="SansSerif Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="80.0" layoutY="379.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="120.0" text="Employee">
+               <font>
+                  <Font name="SansSerif Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="80.0" layoutY="480.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="120.0" text="Patient">
+               <font>
+                  <Font name="SansSerif Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="69.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Dashboard">
+               <font>
+                  <Font name="SansSerif Bold" size="13.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView glyphName="HOME" layoutX="84.0" layoutY="192.0" wrappingWidth="12.071428298950195" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="268.0" prefHeight="627.0" prefWidth="803.0">
+         <effect>
+            <Glow />
+         </effect></AnchorPane>
+   </children>
+</AnchorPane>

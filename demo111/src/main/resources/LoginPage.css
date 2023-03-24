@@ -1,0 +1,90 @@
+
+
+
+.left-form{
+-fx-background-color:linear-gradient(to bottom right,#267194,#258f78);
+padding: 20px;
+}
+
+.right-form {
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.close-button {
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.close-button:hover {
+  background-color: #aaa;
+}
+
+.input-field {
+  border: none;
+  border-radius:3px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-button {
+  -fx-background-color:linear-gradient(to bottom right,#267194,#258f78);
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  }
+
+.login-button:hover {
+    -fx-background-color:linear-gradient(to bottom,#258f78,#267194);
+    }
+
+.progressindicator {
+    -fx-progress-color: #72D3FE;
+}
+
+.progressindicator .spinner {
+    -fx-min-height: 120px;
+    -fx-min-width: 120px;
+    -fx-max-height: 120px;
+    -fx-max-width: 120px;
+}
+
+.progressindicator .determinate-indicator {
+    -fx-padding: 6px;
+}
+
+.button-design {
+    -fx-background-color: #000000;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-padding: 8px 16px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-transition: all 0.3s ease;
+}
+
+.button-design:hover {
+    -fx-background-color: #333333;
+    -fx-cursor: hand;
+}
+
+.button-design:pressed {
+    -fx-background-color: #666666;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+    -fx-translate-y: 1px;
+}
+
+.button-design:disabled {
+    -fx-background-color: #999999;
+    -fx-text-fill: #cccccc;
+    -fx-cursor: not-allowed;
+}

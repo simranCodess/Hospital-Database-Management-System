@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.ProgressBar?>
+<?import com.gluonhq.charm.glisten.control.ProgressIndicator?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.QuadCurve?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="dashboardMain" prefHeight="678.0" prefWidth="1331.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo111.DashboardController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="256.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.21630859375" />
+      <AnchorPane fx:id="dashboardMenu" layoutY="-7.0" prefHeight="708.0" prefWidth="285.0" styleClass="left-dashboard" stylesheets="@../../../Dashboard.css">
+         <children>
+            <ImageView fitHeight="69.0" fitWidth="109.0" layoutX="100.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Untitled-2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="51.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back!">
+               <font>
+                  <Font name="Times New Roman Bold" size="25.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="47.0" fitWidth="69.0" layoutX="97.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="hospitalDashboard" layoutX="72.0" layoutY="257.0" mnemonicParsing="false" onAction="#swithDashboards" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" text="Hospital">
+               <font>
+                  <Font name="SansSerif Bold" size="14.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@../../../Dashboard.css" />
+                  <URL value="@../../../LoginPage.css" />
+               </stylesheets>
+            </Button>
+            <Button fx:id="EmployeeDashboard" layoutX="72.0" layoutY="328.0" mnemonicParsing="false" onAction="#swithDashboards" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" text="Employee">
+               <font>
+                  <Font name="SansSerif Bold" size="14.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@../../../Dashboard.css" />
+                  <URL value="@../../../LoginPage.css" />
+               </stylesheets>
+            </Button>
+            <Button fx:id="patientDashButton" layoutX="72.0" layoutY="398.0" mnemonicParsing="false" onAction="#swithDashboards" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" text="Patient">
+               <font>
+                  <Font name="SansSerif Bold" size="14.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@../../../Dashboard.css" />
+                  <URL value="@../../../LoginPage.css" />
+               </stylesheets>
+            </Button>
+            <Button fx:id="dashboardHome" layoutX="72.0" layoutY="188.0" mnemonicParsing="false" onAction="#swithDashboards" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Dashboard">
+               <font>
+                  <Font name="SansSerif Bold" size="13.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="160.0" layoutY="673.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../logout.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="signOutButton" layoutX="192.0" layoutY="673.0" mnemonicParsing="false" onAction="#signOut" styleClass="signOutButton" stylesheets="@../../../Dashboard.css" text="Sign Out">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="username" alignment="CENTER" layoutX="100.0" layoutY="125.0" prefHeight="17.0" prefWidth="69.0" text="Admin" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="admin" layoutX="72.0" layoutY="465.0" mnemonicParsing="false" onAction="#swithDashboards" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" text="Misc">
+               <stylesheets>
+                  <URL value="@../../../Dashboard.css" />
+                  <URL value="@../../../LoginPage.css" />
+               </stylesheets></Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="employeeDashboard" layoutX="280.0" prefHeight="701.0" prefWidth="1051.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" visible="false">
+         <children>
+            <AnchorPane layoutX="296.0" layoutY="36.0" prefHeight="619.0" prefWidth="712.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" styleClass="white-bg" stylesheets="@../../../Dashboard.css">
+               <children>
+                  <TableView fx:id="addEmpTable" layoutX="6.0" layoutY="37.0" onMouseClicked="#selectRowFill" onSort="#addEmpListView" prefHeight="608.0" prefWidth="704.0" stylesheets="@../../../Dashboard.css">
+                    <columns>
+                      <TableColumn fx:id="addEmpIdCol" prefWidth="49.0" text="Emp Id" />
+                      <TableColumn fx:id="addEmpNameCol" prefWidth="101.0" text="Name" />
+                        <TableColumn fx:id="addEmpStartDateCol" prefWidth="75.0" text="Start Date" />
+                        <TableColumn fx:id="addEmpEndDateCol" prefWidth="75.0" text="End Date" />
+                        <TableColumn fx:id="addEmpHourCol" prefWidth="57.0" text="Product. Hour" />
+                        <TableColumn fx:id="addEmpDoctorIdCol" prefWidth="62.0" text="Doctor Id." />
+                        <TableColumn fx:id="addEmpSpecialityCol" prefWidth="70.0" text="Speciality" />
+                        <TableColumn fx:id="addEmpNurseIdCol" prefWidth="56.0" text="Nurse Id." />
+                        <TableColumn fx:id="addEmpNurseRoomCol" prefWidth="78.0" text="Assigned Room" />
+                        <TableColumn fx:id="addEmpReceptionDeskNumCol" prefWidth="64.0" text="Desk Num." />
+                        <TableColumn fx:id="addEmpHospitalId" prefWidth="104.0" text="Hos id." />
+                    </columns>
+                     <styleClass>
+                        <String fx:value="table-view" />
+                        <String fx:value="table-row-cell" />
+                     </styleClass>
+                  </TableView>
+                  <TextField fx:id="employeeSearch" layoutX="6.0" layoutY="-1.0" prefHeight="25.0" prefWidth="206.0" promptText="Search.." />
+                  <Label layoutX="479.0" layoutY="10.0" prefHeight="17.0" prefWidth="69.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="686.0" prefWidth="272.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" stylesheets="@../../../Dashboard.css">
+               <children>
+                  <Label layoutX="19.0" layoutY="88.0" style="-fx-text-fill: white;" text="Name:" />
+                  <Label layoutX="17.0" layoutY="126.0" style="-fx-text-fill: white;" text="Emp Id." />
+                  <Label layoutX="37.0" layoutY="175.0" />
+                  <Label layoutX="16.0" layoutY="208.0" style="-fx-text-fill: white;" text="End Date:" />
+                  <Label layoutX="13.0" layoutY="245.0" prefHeight="17.0" prefWidth="101.0" style="-fx-text-fill: white;" text="Productive Hours:" />
+                  <Label layoutX="14.0" layoutY="167.0" style="-fx-text-fill: white;" text="Start Date:" />
+                  <TextField fx:id="addEmpName" layoutX="118.0" layoutY="84.0" prefHeight="25.0" prefWidth="139.0" />
+                  <TextField fx:id="addEmpId" layoutX="120.0" layoutY="122.0" prefHeight="25.0" prefWidth="139.0" />
+                  <TextField fx:id="addEmpHours" layoutX="121.0" layoutY="241.0" prefHeight="25.0" prefWidth="139.0" />
+                  <DatePicker fx:id="addEmpStartDate" layoutX="120.0" layoutY="163.0" prefHeight="25.0" prefWidth="139.0" />
+                  <DatePicker fx:id="addEmpEndDate" layoutX="120.0" layoutY="204.0" prefHeight="25.0" prefWidth="139.0" />
+                  <ChoiceBox fx:id="addEmpChoice" layoutX="55.0" layoutY="318.0" prefWidth="150.0" />
+                  <Label layoutX="34.0" layoutY="283.0" prefHeight="18.0" prefWidth="189.0" style="-fx-text-fill: white;" text="Please Choose Employee Type:" />
+                  <Label layoutX="23.0" layoutY="369.0" />
+                  <Label layoutX="18.0" layoutY="379.0" style="-fx-text-fill: white;" text="Doctor Id:" />
+                  <Label layoutX="16.0" layoutY="413.0" style="-fx-text-fill: white;" text="Speciality:" />
+                  <Label layoutX="17.0" layoutY="451.0" />
+                  <Label layoutX="17.0" layoutY="451.0" prefHeight="17.0" prefWidth="56.0" style="-fx-text-fill: white;" text="Nurse Id:" />
+                  <Label layoutX="14.0" layoutY="487.0" style="-fx-text-fill: white;" text="Assigned Room:" />
+                  <Label layoutX="19.0" layoutY="519.0" />
+                  <Label layoutX="14.0" layoutY="519.0" style="-fx-text-fill: white;" text="Desk Number:" />
+                  <TextField fx:id="addDoctorId" layoutX="118.0" layoutY="375.0" prefHeight="25.0" prefWidth="139.0" />
+                  <TextField fx:id="addSpeciality" layoutX="118.0" layoutY="409.0" prefHeight="25.0" prefWidth="139.0" />
+                  <TextField fx:id="addNurseId" layoutX="118.0" layoutY="447.0" prefHeight="25.0" prefWidth="139.0" />
+                  <TextField fx:id="addRoom" layoutX="118.0" layoutY="483.0" prefHeight="25.0" prefWidth="139.0" />
+                  <TextField fx:id="addDeskNumber" layoutX="118.0" layoutY="515.0" prefHeight="25.0" prefWidth="139.0" />
+                  <Button fx:id="addEmployee" layoutX="34.0" layoutY="589.0" mnemonicParsing="false" onAction="#addEmployeeAdd" prefHeight="36.0" prefWidth="83.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Add" />
+                  <Button fx:id="updateEmployee" layoutX="34.0" layoutY="636.0" mnemonicParsing="false" onAction="#setUpdateEmployee" prefHeight="36.0" prefWidth="83.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Update" />
+                  <Button fx:id="deleteEmployee" layoutX="143.0" layoutY="587.0" mnemonicParsing="false" onAction="#deleteEmp" prefHeight="36.0" prefWidth="83.0" style="-fx-text-fill: black; -fx-background-color: white;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Delete" />
+                  <Button fx:id="resetEmployee" layoutX="143.0" layoutY="636.0" mnemonicParsing="false" onAction="#resetAddEmp" prefHeight="36.0" prefWidth="83.0" style="-fx-text-fill: black; -fx-background-color: white;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Reset" />
+                  <Label layoutX="14.0" layoutY="555.0" prefHeight="17.0" prefWidth="78.0" style="-fx-text-fill: white;" text="Hospital Id." />
+                  <TextField fx:id="addHospitalToEmployee" layoutX="120.0" layoutY="551.0" prefHeight="25.0" prefWidth="139.0" />
+                  <Label alignment="CENTER" layoutX="29.0" layoutY="14.0" prefHeight="32.0" prefWidth="215.0" style="-fx-text-fill: white;" text="Welcome to Employee Portal!" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="232.0" layoutY="3.0" prefHeight="23.0" prefWidth="758.0">
+               <children>
+                  <Button layoutX="742.0" layoutY="-3.0" minWidth="39.0" mnemonicParsing="false" onAction="#close" prefHeight="28.0" prefWidth="54.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="close-button" stylesheets="@../../../LoginPage.css" text="X" />
+                  <Button layoutX="690.0" layoutY="-3.0" minWidth="53.0" mnemonicParsing="false" onAction="#minimization" prefHeight="28.0" prefWidth="54.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="close-button" stylesheets="@../../../LoginPage.css" text="-" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="dashboardMainPage" layoutX="280.0" layoutY="-3.0" prefHeight="701.0" prefWidth="1051.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);">
+         <children>
+            <AnchorPane prefHeight="473.0" prefWidth="1051.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" stylesheets="@../../../Dashboard.css">
+               <children>
+                  <VBox layoutX="21.0" layoutY="14.0" prefHeight="274.0" prefWidth="365.0">
+                     <children>
+                        <AnchorPane prefHeight="275.0" prefWidth="365.0" style="-fx-background-color: #F0F0F0;">
+                           <children>
+                              <Label fx:id="leader1" layoutX="24.0" layoutY="63.0" prefHeight="18.0" prefWidth="78.0" text="Employee1" />
+                              <Label fx:id="leader2" layoutX="24.0" layoutY="95.0" prefHeight="18.0" prefWidth="78.0" text="Employee2" />
+                              <Label fx:id="leader3" layoutX="24.0" layoutY="128.0" prefHeight="18.0" prefWidth="78.0" text="Employee 3" />
+                              <Label fx:id="leader4" layoutX="24.0" layoutY="158.0" prefHeight="18.0" prefWidth="78.0" text="Employee 4" />
+                              <Label fx:id="leader5" layoutX="24.0" layoutY="188.0" prefHeight="18.0" prefWidth="78.0" text="Employee5" />
+                              <ProgressBar layoutX="102.0" layoutY="63.0" prefHeight="18.0" prefWidth="200.0" progress="0.83" />
+                              <ProgressBar layoutX="102.0" layoutY="95.0" prefHeight="18.0" prefWidth="200.0" progress="0.73" />
+                              <ProgressBar layoutX="102.0" layoutY="128.0" prefHeight="18.0" prefWidth="200.0" progress="0.66" />
+                              <ProgressBar layoutX="102.0" layoutY="158.0" prefHeight="18.0" prefWidth="200.0" progress="0.57" />
+                              <ProgressBar layoutX="102.0" layoutY="188.0" prefHeight="18.0" prefWidth="200.0" progress="0.43" />
+                              <Label fx:id="emp1" layoutX="314.0" layoutY="64.0" prefHeight="18.0" prefWidth="45.0" text="1023" />
+                              <Label fx:id="emp2" layoutX="314.0" layoutY="95.0" prefHeight="18.0" prefWidth="45.0" text="1023" />
+                              <Label fx:id="emp3" layoutX="314.0" layoutY="128.0" prefHeight="18.0" prefWidth="45.0" text="1023" />
+                              <Label fx:id="emp4" layoutX="314.0" layoutY="158.0" prefHeight="18.0" prefWidth="45.0" text="1023" />
+                              <Label fx:id="emp5" layoutX="314.0" layoutY="188.0" prefHeight="18.0" prefWidth="45.0" text="1023" />
+                              <Label alignment="CENTER" layoutX="90.0" layoutY="14.0" prefHeight="26.0" prefWidth="161.0" text="Leadership Board ">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="winner" layoutX="121.0" layoutY="228.0" prefHeight="18.0" prefWidth="78.0" style="-fx-text-fill: #fba71b;" text="Employee1" textFill="#974711" />
+                              <Label layoutX="24.0" layoutY="228.0" prefHeight="18.0" prefWidth="97.0" text="Congratulations" />
+                              <Label layoutX="24.0" layoutY="246.0" prefHeight="18.0" prefWidth="328.0" text="You Have The Highest Productivity Hours This Month. " />
+                              <Text layoutX="199.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="!!" />
+                              <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="251.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../trophy.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <AnchorPane fx:id="patientStay" layoutX="21.0" layoutY="302.0" prefHeight="145.0" prefWidth="365.0" style="-fx-background-color: #E0E0E0;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="9.0" layoutY="43.0" prefHeight="19.0" prefWidth="59.0" text="Targeted">
+                           <font>
+                              <Font name="Comic Sans MS" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="11.0" layoutY="66.0" prefHeight="16.0" prefWidth="54.0" text="Patient">
+                           <font>
+                              <Font name="Comic Sans MS" size="13.0" />
+                           </font></Label>
+                        <Label alignment="CENTER" layoutX="293.0" layoutY="14.0" prefHeight="19.0" prefWidth="59.0" text="Average">
+                           <font>
+                              <Font name="Comic Sans MS" size="13.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="67.0" layoutY="-1.0" prefHeight="145.0" prefWidth="224.0">
+                           <children>
+                              <PieChart fx:id="patientPieChart" layoutX="20.0" layoutY="-1.0" prefHeight="145.0" prefWidth="200.0" stylesheets="@../../../Dashboard.css">
+                                 <styleClass>
+                                    <String fx:value="chart-pie-slice" />
+                                    <String fx:value="chart-pie" />
+                                    <String fx:value="data0" />
+                                    <String fx:value="data1" />
+                                 </styleClass>
+                              </PieChart>
+                              <QuadCurve controlX="-17.0" controlY="-21.369781494140625" endX="18.0" endY="6.630218505859375" layoutX="50.0" layoutY="62.0" startX="-50.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: transparent;" />
+                              <Polygon layoutX="74.0" layoutY="127.0" points="-12.0, -49.369781494140625, -4.0, -71.36978149414062, 5.0, -55.369781494140625" stroke="BLACK" strokeType="INSIDE" />
+                              <QuadCurve controlX="-15.0" controlY="-18.369781494140625" endX="50.0" fill="DODGERBLUE" layoutX="182.0" layoutY="56.0" startX="-15.0" startY="19.630218505859375" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: transparent;" />
+                              <Polygon layoutX="173.0" layoutY="134.0" points="-12.0, -49.369781494140625, -12.0, -67.36978149414062, 0.0, -60.0" stroke="BLACK" strokeType="INSIDE" />
+                           </children>
+                        </AnchorPane>
+                        <Label alignment="CENTER" layoutX="296.0" layoutY="34.0" prefHeight="16.0" prefWidth="54.0" text="Patient">
+                           <font>
+                              <Font name="Comic Sans MS" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="85.0" prefHeight="16.0" prefWidth="54.0" text="Stay">
+                           <font>
+                              <Font name="Comic Sans MS" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="296.0" layoutY="53.0" prefHeight="16.0" prefWidth="54.0" text="Stay">
+                           <font>
+                              <Font name="Comic Sans MS" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="451.0" layoutY="36.0" prefHeight="385.0" prefWidth="566.0">
+                     <children>
+                        <BarChart fx:id="barChart" layoutX="16.0" prefHeight="374.0" prefWidth="534.0" style="-fx-background-color: #F0F0F0;" title="Employee Benefit Stats.">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <AnchorPane layoutX="59.0" layoutY="374.0" prefHeight="47.0" prefWidth="479.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="37.0" layoutY="5.0" prefHeight="38.0" prefWidth="103.0" style="-fx-background-color: #fba71b;" text="Full Benefits">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="188.0" layoutY="5.0" prefHeight="38.0" prefWidth="103.0" style="-fx-background-color: #fba71b;" text="Half Benefits">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="344.0" layoutY="5.0" prefHeight="38.0" prefWidth="103.0" style="-fx-background-color: #fba71b;" text="No Benefits">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label text="Label" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+            <AnchorPane layoutX="17.0" layoutY="487.0" prefHeight="184.0" prefWidth="1019.0" styleClass="white-bg" stylesheets="@../../../Dashboard.css">
+               <children>
+                  <AnchorPane prefHeight="184.0" prefWidth="184.0" styleClass="card-01" stylesheets="@../../../Dashboard.css">
+                     <children>
+                        <Label alignment="CENTER" layoutY="1.0" prefHeight="20.0" prefWidth="255.0" style="-fx-background-color: #72D3FE;" text="Total Doctors">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" layoutX="65.0" layoutY="30.0" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #72D3FE;" styleClass="round-box" stylesheets="@../../../Dashboard.css">
+                           <children>
+                              <ProgressIndicator maxWidth="1.7976931348623157E308" radius="60.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="totalDoctors" alignment="CENTER" layoutY="165.0" prefHeight="18.0" prefWidth="255.0" style="-fx-background-color: #72D3FE;" text="500">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="255.0" prefHeight="184.0" prefWidth="184.0" styleClass="card-02" stylesheets="@../../../Dashboard.css">
+                     <children>
+                        <Label alignment="CENTER" layoutY="1.0" prefHeight="20.0" prefWidth="255.0" style="-fx-background-color: #FF9F3F;" text="Total Nurses">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" layoutX="65.0" layoutY="30.0" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #72D3FE;" styleClass="round-box" stylesheets="@../../../Dashboard.css">
+                           <children>
+                              <ProgressIndicator maxWidth="1.7976931348623157E308" radius="60.0" HBox.hgrow="ALWAYS" />
+                           </children></HBox>
+                        <Label fx:id="totalNurses" alignment="CENTER" layoutY="165.0" prefHeight="18.0" prefWidth="255.0" style="-fx-background-color: #FF9F3F;" text="500">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="510.0" prefHeight="184.0" prefWidth="184.0" styleClass="card-03" stylesheets="@../../../Dashboard.css">
+                     <children>
+                        <Label alignment="CENTER" layoutY="1.0" prefHeight="20.0" prefWidth="255.0" style="-fx-background-color: #76E775;" text="Total Receptionists">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" layoutX="65.0" layoutY="30.0" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #72D3FE;" styleClass="round-box" stylesheets="@../../../Dashboard.css">
+                           <children>
+                              <ProgressIndicator maxWidth="1.7976931348623157E308" radius="60.0" HBox.hgrow="ALWAYS" />
+                           </children></HBox>
+                        <Label fx:id="totalReceptionist" alignment="CENTER" layoutY="165.0" prefHeight="18.0" prefWidth="255.0" style="-fx-background-color: #76E775;" text="500">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="765.0" prefHeight="185.0" prefWidth="252.0" styleClass="card-04" stylesheets="@../../../Dashboard.css">
+                     <children>
+                        <Label alignment="CENTER" layoutY="1.0" prefHeight="20.0" prefWidth="255.0" style="-fx-background-color: #D771E1;" text="Total Patients">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" layoutX="65.0" layoutY="30.0" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #72D3FE;" styleClass="round-box" stylesheets="@../../../Dashboard.css">
+                           <children>
+                              <ProgressIndicator maxWidth="1.7976931348623157E308" radius="60.0" HBox.hgrow="ALWAYS" />
+                           </children></HBox>
+                        <Label fx:id="totalPatients" alignment="CENTER" layoutY="165.0" prefHeight="18.0" prefWidth="255.0" style="-fx-background-color: #D771E1;" text="500">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <VBox layoutX="123.0" layoutY="498.0" prefHeight="145.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="hospitalDash" layoutX="280.0" prefHeight="701.0" prefWidth="1051.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" visible="false">
+         <children>
+            <TableView fx:id="locationTable" layoutX="27.0" layoutY="68.0" onMouseClicked="#SelectedChoiceForLocation" prefHeight="385.0" prefWidth="224.0" stylesheets="@../../../Dashboard.css">
+              <columns>
+                <TableColumn fx:id="countryCol" prefWidth="75.0" text="Country" />
+                <TableColumn fx:id="CityCol" prefWidth="75.0" text="City" />
+                  <TableColumn fx:id="areaCol" prefWidth="75.0" text="Area Code" />
+              </columns>
+               <styleClass>
+                  <String fx:value="table-view" />
+                  <String fx:value="table-row-cell" />
+               </styleClass>
+            </TableView>
+            <TableView fx:id="hospitalTable" layoutX="271.0" layoutY="68.0" onMouseClicked="#selectedChoiceForHospital" prefHeight="385.0" prefWidth="345.0" stylesheets="@../../../Dashboard.css">
+              <columns>
+                <TableColumn fx:id="hospitalNameCol" prefWidth="122.0" text="Hospital Name" />
+                <TableColumn fx:id="SystemNumberCol" prefWidth="87.0" text="System Nu." />
+                  <TableColumn fx:id="facilityNumberCol" prefWidth="69.0" text="Facility Num." />
+                  <TableColumn fx:id="areaCodeCol" prefWidth="67.0" text="Area Code" />
+              </columns>
+               <styleClass>
+                  <String fx:value="table-row-cell" />
+                  <String fx:value="table-view" />
+               </styleClass>
+            </TableView>
+            <TextField fx:id="addCountry" layoutX="766.0" layoutY="55.0" />
+            <TextField fx:id="addCity" layoutX="766.0" layoutY="104.0" />
+            <TextField fx:id="addAreaCode" layoutX="766.0" layoutY="154.0" />
+            <TextField fx:id="addHospitalName" layoutX="766.0" layoutY="314.0" />
+            <TextField fx:id="addHospitalSystem" layoutX="766.0" layoutY="370.0" />
+            <TextField fx:id="addHospitalFacility" layoutX="766.0" layoutY="423.0" />
+            <Label alignment="CENTER" layoutX="686.0" layoutY="15.0" prefHeight="30.0" prefWidth="206.0" style="-fx-text-fill: white;" text="Add New Location">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="632.0" layoutY="59.0" prefHeight="17.0" prefWidth="69.0" style="-fx-text-fill: white;" text="Country:" />
+            <Label alignment="CENTER" layoutX="629.0" layoutY="108.0" prefHeight="17.0" prefWidth="69.0" style="-fx-text-fill: white;" text="City:" />
+            <Label alignment="CENTER" layoutX="629.0" layoutY="159.0" prefHeight="17.0" prefWidth="69.0" style="-fx-text-fill: white;" text="Area Code:" />
+            <Label alignment="CENTER" layoutX="638.0" layoutY="318.0" prefHeight="18.0" prefWidth="96.0" style="-fx-text-fill: white;" text="Hospital Name:" />
+            <Label alignment="CENTER" layoutX="636.0" layoutY="374.0" prefHeight="17.0" prefWidth="101.0" style="-fx-text-fill: white;" text="System Number:" />
+            <Label alignment="CENTER" layoutX="636.0" layoutY="427.0" prefHeight="18.0" prefWidth="101.0" style="-fx-text-fill: white;" text="Facility Number:" />
+            <Label alignment="CENTER" layoutX="635.0" layoutY="477.0" prefHeight="18.0" prefWidth="103.0" style="-fx-text-fill: white;" text="Location's Area Code:" />
+            <TextField fx:id="addHospitalArea" layoutX="766.0" layoutY="473.0" />
+            <Button fx:id="addHospitalButon" layoutX="695.0" layoutY="210.0" mnemonicParsing="false" onAction="#addLocationByItself" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Add" />
+            <Button fx:id="deleteHospital" layoutX="789.0" layoutY="210.0" mnemonicParsing="false" onAction="#deleteLocation" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Delete" />
+            <Label alignment="CENTER" layoutX="650.0" layoutY="270.0" prefHeight="32.0" prefWidth="285.0" style="-fx-text-fill: white;" text="Add Hospital To A Current Location">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="addHospitalButton" layoutX="697.0" layoutY="530.0" mnemonicParsing="false" onAction="#addHospitalByItself" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Add" />
+            <Button fx:id="deleteHospitalButton" layoutX="789.0" layoutY="530.0" mnemonicParsing="false" onAction="#deleteHospital" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Delete" />
+            <Line endX="212.0" layoutX="719.0" layoutY="260.0" startX="-100.0" />
+            <Label alignment="CENTER" layoutX="83.0" layoutY="30.0" prefHeight="30.0" prefWidth="124.0" style="-fx-text-fill: white;" stylesheets="@../../../Dashboard.css" text="Locations">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="362.0" layoutY="31.0" prefHeight="28.0" prefWidth="103.0" style="-fx-text-fill: white;" text="Hopitals">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PatientDashboard" layoutX="280.0" layoutY="-1.0" prefHeight="701.0" prefWidth="1051.0" visible="false" />
+      <AnchorPane fx:id="administrationDashboard" layoutX="280.0" prefHeight="680.0" prefWidth="1051.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" visible="false">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="51.0" prefHeight="619.0" prefWidth="328.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" styleClass="white-bg">
+               <stylesheets>
+                  <URL value="@../../../Dashboard.css" />
+                  <URL value="@../../../LoginPage.css" />
+               </stylesheets>
+               <children>
+                  <Label alignment="CENTER" layoutX="29.0" layoutY="14.0" prefHeight="26.0" prefWidth="272.0" style="-fx-text-fill: white; -fx-background-color: rgba(38, 57, 73, 0.8);" text="Head Nurse and Cabin" textFill="#1b9ea4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="cabinTable" layoutX="61.0" layoutY="310.0" prefHeight="200.0" prefWidth="206.0" styleClass="table-row-cell" stylesheets="@../../../Dashboard.css">
+                    <columns>
+                      <TableColumn fx:id="cabinTypeB" prefWidth="102.0" text="Cabin Type" />
+                      <TableColumn fx:id="CabinNumberColB" prefWidth="103.0" text="Cabin Number" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="headNurseTable" layoutX="65.0" layoutY="76.0" prefHeight="200.0" prefWidth="200.0" styleClass="table-row-cell">
+                    <columns>
+                      <TableColumn fx:id="NurseIdColA" prefWidth="75.0" text="Nurse Id." />
+                      <TableColumn fx:id="empIdColA" prefWidth="64.0" text="Emp Id." />
+                        <TableColumn fx:id="cabinColA" prefWidth="60.0" text="Cabin" />
+                    </columns>
+                     <stylesheets>
+                        <URL value="@../../../Dashboard.css" />
+                        <URL value="@../../../LoginPage.css" />
+                     </stylesheets>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="353.0" layoutY="51.0" prefHeight="619.0" prefWidth="345.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" styleClass="white-bg">
+               <stylesheets>
+                  <URL value="@../../../LoginPage.css" />
+                  <URL value="@../../../Dashboard.css" />
+               </stylesheets>
+               <children>
+                  <Label alignment="CENTER" layoutX="112.0" layoutY="14.0" prefHeight="17.0" prefWidth="103.0" style="-fx-background-color: rgba(38, 57, 73, 0.8); -fx-text-fill: white;" text="Billing" textFill="#1b9ea4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="billingTable" layoutX="37.0" layoutY="74.0" prefHeight="200.0" prefWidth="272.0" styleClass="table-row-cell" stylesheets="@../../../Dashboard.css">
+                    <columns>
+                      <TableColumn fx:id="ReceiptNumColC" prefWidth="64.0" text="Reciept_number" />
+                      <TableColumn fx:id="empIdC" prefWidth="74.0" text="Emp Id." />
+                        <TableColumn fx:id="amountC" prefWidth="75.0" text="Amount" />
+                        <TableColumn fx:id="reportIdC" prefWidth="58.0" text="Report Id." />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="cardDetailsTable" layoutX="25.0" layoutY="310.0" prefHeight="274.0" prefWidth="296.0" styleClass="table-row-cell" stylesheets="@../../../Dashboard.css">
+                    <columns>
+                      <TableColumn fx:id="nameOnCardD" prefWidth="87.0" text="Name on Card" />
+                      <TableColumn fx:id="cardNumberD" prefWidth="66.0" text="Card Nu." />
+                        <TableColumn fx:id="expiryD" prefWidth="42.0" text="Expiry" />
+                        <TableColumn fx:id="cvvD" prefWidth="35.0" text="Cvv" />
+                        <TableColumn fx:id="recieptNumD" prefWidth="65.0" text="Reciept Nu." />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="711.0" layoutY="51.0" prefHeight="619.0" prefWidth="313.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" styleClass="white-bg">
+               <stylesheets>
+                  <URL value="@../../../LoginPage.css" />
+                  <URL value="@../../../LoginPage.css" />
+                  <URL value="@../../../Dashboard.css" />
+               </stylesheets>
+               <children>
+                  <Label alignment="CENTER" layoutX="54.0" layoutY="14.0" prefHeight="23.0" prefWidth="206.0" style="-fx-background-color: rgba(38, 57, 73, 0.8); -fx-text-fill: white;" text=" Employee Benefits" textFill="#1b9ea4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="benefitsTable" layoutX="82.0" layoutY="68.0" prefHeight="200.0" prefWidth="150.0" styleClass="table-row-cell" stylesheets="@../../../Dashboard.css">
+                    <columns>
+                      <TableColumn fx:id="empIdE" prefWidth="75.0" text="Emp Id." />
+                      <TableColumn fx:id="benefitIdE" prefWidth="75.0" text="Benefit Id" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="240.0" layoutY="15.0" prefHeight="28.0" prefWidth="566.0">
+               <children>
+                  <Label layoutX="135.0" layoutY="3.0" prefHeight="23.0" prefWidth="296.0" style="-fx-text-fill: white;" text="Welcome to Adminstration Dashboard!" textFill="#004343">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="patientDashboard" layoutX="280.0" prefHeight="701.0" prefWidth="1051.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" visible="false">
+         <children>
+            <AnchorPane layoutX="61.0" layoutY="20.0" prefHeight="211.0" prefWidth="959.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" styleClass="white-bg" stylesheets="@../../../Dashboard.css">
+               <children>
+                  <Label alignment="CENTER" layoutX="311.0" layoutY="14.0" prefHeight="26.0" prefWidth="272.0" style="-fx-text-fill: white;" text="Welcome To The Patient Portal">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="50.0" layoutY="65.0" prefHeight="17.0" prefWidth="87.0" style="-fx-text-fill: white;" text="Patient Name:" />
+                  <Label layoutX="51.0" layoutY="97.0" style="-fx-text-fill: white;" text="Phone Number:" />
+                  <Label layoutX="50.0" layoutY="127.0" prefHeight="17.0" prefWidth="78.0" style="-fx-text-fill: white;" text="Address:" />
+                  <Label layoutX="50.0" layoutY="158.0" style="-fx-text-fill: white;" text="Health Care Number:" />
+                  <TextField fx:id="patientNameFeild" layoutX="171.0" layoutY="61.0" />
+                  <TextField fx:id="patientPhoneField" layoutX="171.0" layoutY="93.0" />
+                  <TextField fx:id="patientAddressField" layoutX="171.0" layoutY="123.0" />
+                  <TextField fx:id="patientHealthNumField" layoutX="171.0" layoutY="154.0" />
+                  <Label layoutX="531.0" layoutY="65.0" style="-fx-text-fill: white;" text="Report Id." />
+                  <Label layoutX="531.0" layoutY="97.0" style="-fx-text-fill: white;" text="Facility Number:" />
+                  <Label layoutX="531.0" layoutY="127.0" style="-fx-text-fill: white;" text="Cabin Number:" />
+                  <Label layoutX="531.0" layoutY="158.0" prefHeight="17.0" prefWidth="59.0" style="-fx-text-fill: white;" text="Doctor Id." />
+                  <TextField fx:id="patientReportField" layoutX="627.0" layoutY="61.0" />
+                  <TextField fx:id="patientFacilityNumField" layoutX="627.0" layoutY="93.0" />
+                  <TextField fx:id="patientCabinfeild" layoutX="627.0" layoutY="123.0" />
+                  <TextField fx:id="patientDoctorFeild" layoutX="627.0" layoutY="154.0" />
+                  <Label layoutX="859.0" layoutY="65.0" prefHeight="17.0" prefWidth="54.0" style="-fx-text-fill: white;" text="Nurse id." />
+                  <TextField fx:id="patientNurseIdFeild" layoutX="835.0" layoutY="93.0" prefHeight="25.0" prefWidth="101.0" />
+                  <Button fx:id="updatePatient" layoutX="337.0" layoutY="131.0" mnemonicParsing="false" onAction="#setUpdatePatient" prefHeight="36.0" prefWidth="89.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Update" />
+                  <Button fx:id="deletePatient" layoutX="435.0" layoutY="88.0" mnemonicParsing="false" onAction="#deletePatient" prefHeight="36.0" prefWidth="89.0" style="-fx-text-fill: black; -fx-background-color: white;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Delete" />
+                  <Button fx:id="addPatient" alignment="CENTER" layoutX="338.0" layoutY="88.0" mnemonicParsing="false" onAction="#addPatientAdd" prefHeight="36.0" prefWidth="87.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Add" />
+                  <Button fx:id="resetPatient" layoutX="434.0" layoutY="131.0" mnemonicParsing="false" onAction="#resetAddPatient" prefHeight="36.0" prefWidth="92.0" style="-fx-background-color: white; -fx-text-fill: black;" styleClass="button-design" stylesheets="@../../../LoginPage.css" text="Reset" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="57.0" layoutY="243.0" prefHeight="385.0" prefWidth="959.0" style="-fx-background-color: rgba(38, 57, 73, 0.8);" styleClass="white-bg" stylesheets="@../../../Dashboard.css">
+               <children>
+                  <TableView fx:id="patientTable" layoutX="14.0" layoutY="12.0" onMouseClicked="#selectedChoiceForPatient" prefHeight="362.0" prefWidth="932.0">
+                    <columns>
+                      <TableColumn fx:id="nameColP" prefWidth="101.0" text="Patient Name" />
+                      <TableColumn fx:id="phoneColP" prefWidth="83.0" text="Phone num." />
+                        <TableColumn fx:id="addressColP" prefWidth="190.0" text="Address" />
+                        <TableColumn fx:id="reportIdColP" prefWidth="64.0" text="Report Id" />
+                        <TableColumn fx:id="healthColP" prefWidth="128.0" text="Health Care Number" />
+                        <TableColumn fx:id="facilityNumColP" prefWidth="98.0" text="Facility Number" />
+                        <TableColumn fx:id="cabinNumColP" prefWidth="117.0" text="Cabin Number" />
+                        <TableColumn fx:id="doctorIdColP" prefWidth="67.0" text="Doctor Id" />
+                        <TableColumn fx:id="nurseIDColP" prefWidth="83.0" text="Nurse Id" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,129 @@
+.left-dashboard{
+-fx-background-color:linear-gradient(to bottom right,#267194,#258f78);
+padding: 20px;
+}
+
+.right-dashboard {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.credits-button{
+-fx-padding: 0 8px;
+-fx-cursor: hand;
+}
+
+.creditsButton:hover {
+    -fx-text-decoration: underline;
+}
+
+.signOutButton {
+
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.signOutButton:hover {
+-fx-text-decoration: underline;
+}
+
+.white-bg{
+-fx-background-color: #fff;
+-fx-background-radius: 10px;
+}
+
+.stats{
+-fx-background-radius: 10px;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+}
+.
+table-view .column-header,
+.table-view .table-cell {
+    -fx-text-fill: black;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #3c5d7f;
+}
+
+.table-view {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5);
+}
+.column-header {
+    -fx-background-color: #6bb7c6;
+}
+
+.dashboard-button {
+    -fx-background-color: #258f78;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+    -fx-alignment: center;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 1);
+}
+
+.dashboard-button:hover {
+    -fx-background-color: #267194;
+    -fx-cursor: hand;
+}
+
+.dashboard-button:pressed {
+    -fx-background-color: #204e5d;
+}
+
+
+
+.text-field:focused {
+    -fx-background-color: #c4e4ee;
+    -fx-border-color: #6bb7c6;
+}
+
+.table-row-cell {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14;
+    -fx-font-smoothing-type: gray;
+}
+
+
+.card-01 {
+  -fx-background-color: rgba(0, 162, 211, 0.3);
+}
+
+.card-02 {
+  -fx-background-color: rgba(255, 121, 63, 0.3);
+}
+
+.card-03 {
+  -fx-background-color: rgba(118, 214, 105, 0.3);
+}
+
+.card-04 {
+  -fx-background-color: rgba(213, 105, 221, 0.3);
+}
+
+.round-box{
+-fx-background-radius: 100%;
+-fx-border-radius: 100%;
+-fx-border-width: 5px;
+}
+
+.chart-pie {
+  -fx-start-angle: 90;
+}
+
+.chart-pie .data0.chart-pie-slice {
+  -fx-pie-color: #FF5E5B;
+}
+
+.chart-pie .data1.chart-pie-slice {
+  -fx-pie-color: #2C699A;
+}
+
+
+

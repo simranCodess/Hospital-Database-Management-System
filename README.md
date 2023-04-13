@@ -1,7 +1,6 @@
 # Hospital-Database-Management-System
-A Hospital database management system
-
-This project was made for one of my classes, it's written in java. I used JDBC to connect java with mySql. Used Javafx as the user interface. 
+A Hospital database management System
+ I used JDBC to connect java with mySql. Used Javafx as the user interface. 
 
 Instructions to run it:
 1) Clone this repository.

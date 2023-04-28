@@ -1,6 +1,6 @@
 # Hospital-Database-Management-System
-A Hospital database management System
- I used JDBC to connect java with mySql. Used Javafx as the user interface. 
+A Hospital database management System.
+I used JDBC to connect java with mySql. Used Javafx as the user interface. 
 
 
 ![](https://github.com/simranCodess/Hospital-Database-Management-System/blob/main/project.gif)
